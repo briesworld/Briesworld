@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brie’s Website</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/13/d5/1f/13d51f78e1bd4bb063b66c28ffdcb303.jpg">
   <style>
     * {
@@ -20,10 +18,18 @@
     }
 
     body {
-      font-family: Spiro, sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
       background: linear-gradient(to bottom, #ffd6e7, #fff0f7, #f6e9ff);
       color: #4a3a4f;
       line-height: 1.6;
+    <div class="sparkle">✨</div>
+      .sparkle {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  font-size: 20px;
+}
     }
 
     a {
@@ -115,10 +121,9 @@
     }
 
     .btn-pink {
-      background: #ff6fae;
-      color: white;
-      box-shadow: 0 8px 18px rgba(255, 111, 174, 0.25);
-    }
+  background: #ff6fae;
+  box-shadow: 0 0 15px #ffb6d9;
+}
 
     .btn-pink:hover {
       transform: translateY(-2px);
@@ -154,6 +159,17 @@
       color: #6b5b70;
     }
 
+    .section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
     .cards {
       max-width: 1100px;
       margin: 0 auto;
@@ -161,6 +177,11 @@
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 22px;
     }
+
+   .card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+} 
 
     .card {
       background: rgba(255, 255, 255, 0.8);
@@ -317,6 +338,14 @@ width="100%" height="152" frameBorder="0"></iframe>
       <p>
         Hi, I’m Brie! I love anime, art, food, and learning how to
         code pretty websites. This page is my little creative space on the internet 💕
+        <section class="section">
+  <h2 class="section-title">Currently 🌸</h2>
+  <p style="text-align:center;">
+    🎧 Listening to: PinkPantherese<br>
+    🎨 Drawing: whatever at the moment💖<br>
+    💻 Coding: my website ✨
+  </p>
+</section>
       </p>
     </div>
   </section>
@@ -324,6 +353,13 @@ width="100%" height="152" frameBorder="0"></iframe>
   <footer class="footer">
     <h3>Thanks for visiting my site! I hope I'll see you soon! 💗</h3>
     <p>Made with sparkles, love, and a lot of dedication ✨</p>
+    <section class="section">
+  <h2 class="section-title">Find Me 💌</h2>
+  <p style="text-align:center;">
+    Pinterest: @Abunniesheart123456 🌸 <br>
+    TikTok: @brie_33 🎀
+  </p>
+</section>
   </footer>
 
 </body>
