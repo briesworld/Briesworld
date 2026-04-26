@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>luvleybrie</title>
+  <title>Brie’s Spring Website</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/e9/e8/a2/e9e8a264e685a33191e638f6b04c0ea9.jpg">
 
   <style>
     * {
@@ -21,8 +20,8 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(to bottom, #ffd6e7, #fff0f7, #f6e9ff);
-      color: #4a3a4f;
+      background: linear-gradient(to bottom, #f7ffd8, #fff8d6, #ffe8f2, #e7ffe8);
+      color: #4f5f3c;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -42,13 +41,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      border-bottom: 1px solid rgba(218, 240, 191, 0.8);
+      box-shadow: 0 4px 14px rgba(180, 212, 137, 0.15);
     }
 
     .logo {
       font-size: 1.3rem;
       font-weight: 700;
-      color: #ff4f9a;
+      color: #7bb661;
     }
 
     .nav-links {
@@ -58,7 +58,7 @@
     }
 
     .nav-links a {
-      color: #7a5b7f;
+      color: #6b8750;
       font-weight: 700;
       padding: 8px 14px;
       border-radius: 999px;
@@ -66,7 +66,7 @@
     }
 
     .nav-links a:hover {
-      background: #ffe0ef;
+      background: #eefad7;
     }
 
     .hero {
@@ -80,16 +80,17 @@
     .hero-card {
       max-width: 950px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.84);
-      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      border-radius: 32px;
       padding: 40px;
-      box-shadow: 0 12px 35px rgba(255, 105, 180, 0.12);
+      box-shadow: 0 12px 35px rgba(180, 212, 137, 0.18);
       text-align: center;
+      border: 2px solid #eefad7;
     }
 
     .hero-card h1 {
-      font-size: 2.5rem;
-      color: #ff4f9a;
+      font-size: 2.6rem;
+      color: #7bb661;
       margin-bottom: 14px;
       min-height: 3.2rem;
     }
@@ -98,7 +99,7 @@
       font-size: 1.05rem;
       max-width: 650px;
       margin: 0 auto 24px;
-      color: #5f5164;
+      color: #6f7a59;
     }
 
     .button-group {
@@ -110,8 +111,7 @@
     }
 
     .btn,
-    .small-btn,
-    .mood-btn {
+    .small-btn {
       display: inline-block;
       padding: 12px 22px;
       border-radius: 999px;
@@ -122,34 +122,28 @@
       font-family: inherit;
     }
 
-    .btn-pink,
+    .btn-main,
     .small-btn {
-      background: #ff6fae;
+      background: #a7d97f;
       color: white;
-      box-shadow: 0 0 15px #ffb6d9;
+      box-shadow: 0 0 15px rgba(167, 217, 127, 0.4);
     }
 
-    .btn-pink:hover,
+    .btn-main:hover,
     .small-btn:hover {
       transform: translateY(-2px);
-      background: #ff5aa2;
+      background: #92cc64;
     }
 
     .btn-light {
-      background: #fff1f7;
-      color: #c94c85;
-      border: 2px solid #ffd2e6;
+      background: #fff7c9;
+      color: #7b8f4e;
+      border: 2px solid #f4ec9d;
     }
 
     .btn-light:hover {
       transform: translateY(-2px);
-      background: #ffe7f2;
-    }
-
-    .btn:active,
-    .small-btn:active,
-    .mood-btn:active {
-      transform: scale(0.97);
+      background: #fff2a8;
     }
 
     .section {
@@ -159,7 +153,7 @@
     .section-title {
       text-align: center;
       font-size: 2rem;
-      color: #d94c92;
+      color: #7bb661;
       margin-bottom: 18px;
     }
 
@@ -167,14 +161,14 @@
       text-align: center;
       max-width: 650px;
       margin: 0 auto 36px;
-      color: #6b5b70;
+      color: #6f7a59;
     }
 
     .divider {
       text-align: center;
-      font-size: 20px;
-      color: #d06c9d;
-      padding: 0 20px 10px;
+      font-size: 22px;
+      color: #94c973;
+      padding: 0 20px 12px;
     }
 
     .cards {
@@ -186,21 +180,23 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.82);
-      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.84);
+      border-radius: 28px;
       padding: 24px;
-      box-shadow: 0 10px 24px rgba(219, 112, 147, 0.12);
+      box-shadow: 0 10px 24px rgba(180, 212, 137, 0.14);
       transition: 0.3s;
+      border: 2px solid #eefad7;
+      text-align: center;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px #ffb6d9;
+      box-shadow: 0 0 20px rgba(167, 217, 127, 0.35);
     }
 
     .card h3 {
       margin-bottom: 10px;
-      color: #ff4f9a;
+      color: #7bb661;
     }
 
     .gallery {
@@ -212,13 +208,14 @@
     }
 
     .gallery-box {
-      background: rgba(255, 255, 255, 0.82);
-      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.84);
+      border-radius: 28px;
       min-height: 220px;
       padding: 14px;
-      box-shadow: 0 10px 22px rgba(219, 112, 147, 0.12);
+      box-shadow: 0 10px 22px rgba(180, 212, 137, 0.14);
       overflow: hidden;
       transition: 0.3s;
+      border: 2px solid #eefad7;
     }
 
     .gallery-box:hover {
@@ -229,116 +226,65 @@
       width: 100%;
       height: 280px;
       object-fit: cover;
-      border-radius: 18px;
+      border-radius: 20px;
       transition: transform 0.3s ease;
       display: block;
     }
 
     .gallery-box img:hover {
-      transform: scale(1.05);
-    }
-
-    .gallery-box iframe {
-      width: 100%;
-      height: 152px;
-      border: 0;
-      border-radius: 12px;
-      display: block;
+      transform: scale(1.04);
     }
 
     .about-box,
-    .info-box,
     .quote-wrap,
-    .message-wrap,
-    .fun-wrap,
-    .chat-wrap {
+    .message-wrap {
       max-width: 850px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.84);
       border-radius: 28px;
       padding: 30px;
-      box-shadow: 0 10px 24px rgba(219, 112, 147, 0.12);
+      box-shadow: 0 10px 24px rgba(180, 212, 137, 0.14);
       text-align: center;
+      border: 2px solid #eefad7;
     }
 
-    .message-wrap input,
-    .chat-wrap input {
+    .message-wrap input {
       width: min(100%, 420px);
       padding: 12px 14px;
       border-radius: 999px;
-      border: 2px solid #ffd2e6;
+      border: 2px solid #dff0bc;
       outline: none;
       font-family: inherit;
-      margin: 6px;
       margin-bottom: 12px;
     }
 
     #quoteBox,
-    #output,
-    #complimentBox,
-    #moodText {
+    #output {
       margin-top: 14px;
-      color: #6b5b70;
+      color: #6f7a59;
       font-weight: 700;
       min-height: 24px;
-    }
-
-    #chatBox {
-      margin-top: 20px;
-      text-align: left;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .chat-bubble {
-      background: #fff0f7;
-      padding: 10px 12px;
-      margin-bottom: 8px;
-      border-radius: 14px;
-      color: #5f5164;
-      box-shadow: 0 4px 10px rgba(219, 112, 147, 0.08);
-      word-wrap: break-word;
-    }
-
-    .button-row {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .mood-btn {
-      background: #fff1f7;
-      color: #c94c85;
-      border: 2px solid #ffd2e6;
-      padding: 10px 16px;
-      font-size: 1.1rem;
-    }
-
-    .mood-btn:hover {
-      background: #ffe7f2;
-      transform: translateY(-2px);
     }
 
     .floating-note {
       position: fixed;
       bottom: 12px;
       right: 12px;
-      opacity: 0.7;
+      opacity: 0.85;
       font-size: 12px;
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.78);
       padding: 8px 12px;
       border-radius: 999px;
       z-index: 999;
+      color: #7bb661;
+      border: 1px solid #eefad7;
     }
 
-    .sparkle-decor {
+    .flower-decor {
       position: fixed;
-      top: 20%;
-      left: 10%;
-      font-size: 20px;
+      top: 18%;
+      left: 8%;
+      font-size: 22px;
       pointer-events: none;
       z-index: 1;
     }
@@ -346,11 +292,7 @@
     .footer {
       padding: 28px 20px 40px;
       text-align: center;
-      color: #7a667e;
-    }
-
-    .socials {
-      margin-top: 20px;
+      color: #6f7a59;
     }
 
     @media (max-width: 700px) {
@@ -374,20 +316,17 @@
   </style>
 </head>
 <body>
-  <div class="sparkle-decor">✨</div>
+  <div class="flower-decor">🌼</div>
 
   <nav class="navbar">
-    <div class="logo">🌸 brie’s webpage</div>
+    <div class="logo">🌷 Brie’s Spring World</div>
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#favorites">Favorites</a>
       <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
-      <a href="#currently">Currently</a>
       <a href="#quotes">Quotes</a>
       <a href="#message">Message</a>
-      <a href="#fun">Fun</a>
-      <a href="#chat">Chat</a>
     </div>
   </nav>
 
@@ -395,176 +334,106 @@
     <div class="hero-card">
       <h1 id="typeText"></h1>
       <p>
-        A soft little corner of the internet for art, chill vibes, cozy inspiration,
-        and everything sweet ✨
+        A fresh little spring corner full of flowers, sunshine, soft colors,
+        and sweet vibes 🌸☀️
       </p>
 
       <div class="button-group">
-        <a href="#gallery" class="btn btn-pink">See My Gallery</a>
+        <a href="#gallery" class="btn btn-main">See My Garden</a>
         <a href="#about" class="btn btn-light">About Me</a>
       </div>
     </div>
   </section>
 
   <section class="section" id="favorites">
-    <h2 class="section-title">My Favorite Things 💖</h2>
+    <h2 class="section-title">Spring Favorites 🌼</h2>
     <p class="section-subtext">
-      My favorite things are food, painting, anime, gaming, drawing, digital art, and more!
+      Soft colors, flowers, sunshine, sweet treats, and cozy happy energy.
     </p>
 
     <div class="cards">
       <div class="card">
+        <h3>🌷 Flowers</h3>
+        <p>Tulips, daisies, cherry blossoms, and anything soft and pretty.</p>
+      </div>
+
+      <div class="card">
+        <h3>☀️ Sunshine</h3>
+        <p>Warm light, fresh air, and cute little outdoor moments.</p>
+      </div>
+
+      <div class="card">
+        <h3>🧺 Picnics</h3>
+        <p>Snacks, blankets, fruit, and dreamy spring afternoons.</p>
+      </div>
+
+      <div class="card">
         <h3>🎨 Art</h3>
-        <p>I love drawing, creating cute crafts, and making everything with love.</p>
-      </div>
-
-      <div class="card">
-        <h3>🎧 Music</h3>
-        <p>Soft playlists, Stateside + Zara Larsson, Non-Stop, Full Moon, Should I Stay or Should I Go, and Running Up That Hill.</p>
-      </div>
-
-      <div class="card">
-        <h3>🌸 Aesthetic</h3>
-        <p>Pearly, classy French pink, coquette, royalcore, and soft girl vibes.</p>
-      </div>
-
-      <div class="card">
-        <h3>💻 Coding</h3>
-        <p>I’m learning how to make cute websites and turn my ideas into real pages.</p>
+        <p>Drawing cute things inspired by spring colors and nature.</p>
       </div>
     </div>
   </section>
 
-  <div class="divider">✧･ﾟ: *✧･ﾟ:* 🌸 *:･ﾟ✧*:･ﾟ✧</div>
+  <div class="divider">✿･ﾟ: *✿･ﾟ:* 🌷 *:･ﾟ✿*:･ﾟ✿</div>
 
   <section class="section" id="gallery">
-    <h2 class="section-title">Pinterest-Style Gallery 🫧</h2>
-    <p class="section-subtext">My art gallery! Take a look:</p>
+    <h2 class="section-title">Spring Gallery 🌸</h2>
+    <p class="section-subtext">A little wall of pretty spring inspiration.</p>
 
     <div class="gallery">
       <div class="gallery-box">
-        <img src="https://i.pinimg.com/736x/8c/73/ef/8c73efa6c8fdcee4fd4fae95341e21a3.jpg" alt="Art 1">
+        <img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=900&q=80" alt="Spring flowers">
       </div>
 
       <div class="gallery-box">
-        <img src="https://i.pinimg.com/736x/51/fa/93/51fa9305d77a8457699370feed81b425.jpg" alt="Art 2">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80" alt="Flower field">
       </div>
 
       <div class="gallery-box">
-        <img src="https://i.pinimg.com/1200x/28/b4/94/28b494112bd8ade7bcadb637f4778ed4.jpg" alt="Art 3">
-      </div>
-
-      <div class="gallery-box">
-        <img src="https://i.pinimg.com/736x/6d/3c/53/6d3c5357230b9372caf7ddffadfab08e.jpg" alt="Art 4">
-      </div>
-
-      <div class="gallery-box">
-        <img src="https://i.pinimg.com/736x/4e/fb/91/4efb91894bde7b9b0ea18ea793ff6244.jpg" alt="Art 5">
-      </div>
-
-      <div class="gallery-box">
-        <iframe
-          src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcUY9O5yRihK"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
+        <img src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=900&q=80" alt="Spring picnic">
       </div>
     </div>
   </section>
 
-  <div class="divider">✧･ﾟ: *✧･ﾟ:* 🎀 *:･ﾟ✧*:･ﾟ✧</div>
+  <div class="divider">✿･ﾟ: *✿･ﾟ:* 🐝 *:･ﾟ✿*:･ﾟ✿</div>
 
   <section class="section" id="about">
-    <h2 class="section-title">About Me 🌸</h2>
+    <h2 class="section-title">About This Page 🌿</h2>
     <div class="about-box">
       <p>
-        Hi, I’m Brie! I love anime, art, food, and learning how to code pretty websites.
-        This page is my little creative space on the internet 💕
-      </p>
-    </div>
-  </section>
-
-  <section class="section" id="currently">
-    <h2 class="section-title">Currently 🌸</h2>
-    <div class="info-box">
-      <p>
-        🎧 Listening to: PinkPantheress<br>
-        🎨 Drawing: whatever at the moment 💖<br>
-        💻 Coding: my website ✨
+        This is my spring-themed website with soft colors, flowers, and fresh happy vibes.
+        It feels light, cute, and peaceful 💚
       </p>
     </div>
   </section>
 
   <section class="section" id="quotes">
-    <h2 class="section-title">Quotes 💭</h2>
+    <h2 class="section-title">Spring Quotes 🌼</h2>
     <div class="quote-wrap">
-      <button class="small-btn" onclick="quote()">💭 New Quote</button>
+      <button class="small-btn" onclick="quote()">🌸 New Quote</button>
       <p id="quoteBox"></p>
     </div>
   </section>
 
   <section class="section" id="message">
-    <h2 class="section-title">Leave a Message 💌</h2>
+    <h2 class="section-title">Leave a Note 🌷</h2>
     <div class="message-wrap">
-      <input type="text" id="messageInput" placeholder="Say something cute 💖">
+      <input type="text" id="messageInput" placeholder="Write something sweet 🌼">
       <br>
       <button class="small-btn" onclick="showMsg()">Send</button>
       <p id="output"></p>
     </div>
   </section>
 
-  <section class="section" id="fun">
-    <h2 class="section-title">Fun Zone 🎀</h2>
-    <div class="fun-wrap">
-      <div class="button-row">
-        <button class="small-btn" onclick="confetti()">🎉 Celebrate</button>
-        <button class="small-btn" onclick="changeColor()">🎨 Change Theme</button>
-        <button class="small-btn" onclick="compliment()">💖 Compliment Me</button>
-      </div>
-
-      <p id="complimentBox"></p>
-
-      <div class="button-row">
-        <button class="mood-btn" onclick="mood('happy')">😊</button>
-        <button class="mood-btn" onclick="mood('sad')">🥺</button>
-        <button class="mood-btn" onclick="mood('confused')">🤨</button>
-        <button class="mood-btn" onclick="mood('hungry')">🍰</button>
-        <button class="mood-btn" onclick="mood('fine')">😐</button>
-      </div>
-
-      <p id="moodText"></p>
-    </div>
-  </section>
-
-  <section class="section" id="chat">
-    <h2 class="section-title">Chat Wall 💬</h2>
-    <div class="chat-wrap">
-      <input type="text" id="chatName" placeholder="Your name 🎀">
-      <input type="text" id="chatMessage" placeholder="Say something cute 💖">
-      <br>
-      <button class="small-btn" onclick="sendMessage()">Send</button>
-
-      <div id="chatBox"></div>
-    </div>
-  </section>
-
   <footer class="footer">
-    <h3>Thanks for visiting my site! I hope I’ll see you soon! 💗</h3>
-    <p>Made with sparkles, love, and a lot of dedication ✨</p>
-
-    <div class="socials">
-      <h2 class="section-title">Find Me 💌</h2>
-      <p>
-        Pinterest: @Abunniesheart123456 🌸 <br>
-        TikTok: @brie_33 🎀
-      </p>
-    </div>
+    <h3>Thanks for visiting my spring page 🌸</h3>
+    <p>Made with flowers, sunshine, and soft little details ☀️</p>
   </footer>
 
-  <div class="floating-note">made with love 💖</div>
+  <div class="floating-note">spring vibes only 🌼</div>
 
   <script>
-    let text = "Welcome to Brie’s Cute Website 🎀";
+    let text = "Welcome to Brie’s Spring Website 🌷";
     let i = 0;
 
     function type() {
@@ -579,11 +448,11 @@
 
     function quote() {
       const quotes = [
-        "Stay soft 🌸",
-        "Create what you love 💖",
-        "You are the vibe ✨",
-        "Pretty things can be powerful 🎀",
-        "Dream it, then make it real 💫"
+        "Bloom in your own time 🌸",
+        "Softness can still be strong 🌿",
+        "Let yourself grow 🌷",
+        "Spring is proof that new things can be beautiful ☀️",
+        "Keep blooming, pretty thing 🌼"
       ];
       const random = quotes[Math.floor(Math.random() * quotes.length)];
       document.getElementById("quoteBox").textContent = random;
@@ -591,169 +460,49 @@
 
     function showMsg() {
       const msg = document.getElementById("messageInput").value.trim();
-      document.getElementById("output").textContent = msg ? "You said: " + msg : "Type something first 💖";
+      document.getElementById("output").textContent = msg ? "You said: " + msg : "Type something first 🌷";
     }
-
-    function compliment() {
-      const compliments = [
-        "You’re literally iconic 💅",
-        "Your vibe is unmatched ✨",
-        "You make everything better 💖",
-        "Main character energy 🎀",
-        "You are loved 💕",
-        "You are amazing ❤️",
-        "Forget the haters!",
-        "Say sorry when it matters and speak kindly.",
-        "Be thankful 🌸"
-      ];
-      const random = compliments[Math.floor(Math.random() * compliments.length)];
-      document.getElementById("complimentBox").textContent = random;
-    }
-
-    function mood(type) {
-      let message = "";
-
-      if (type === "happy") {
-        message = "Yay!! 💖";
-      } else if (type === "sad") {
-        message = "Sending hugs 🫂";
-      } else if (type === "confused") {
-        message = "That’s okay, take it one step at a time 🌸";
-      } else if (type === "hungry") {
-        message = "Go get a snack, sweetie 🍰";
-      } else if (type === "fine") {
-        message = "I’m here with you either way 💕";
-      }
-
-      document.getElementById("moodText").textContent = message;
-    }
-
-    function confetti() {
-      for (let i = 0; i < 30; i++) {
-        const piece = document.createElement("div");
-        piece.textContent = "✨";
-        piece.style.position = "fixed";
-        piece.style.left = Math.random() * window.innerWidth + "px";
-        piece.style.top = "0px";
-        piece.style.fontSize = "16px";
-        piece.style.pointerEvents = "none";
-        piece.style.zIndex = "9999";
-
-        document.body.appendChild(piece);
-
-        let topPos = 0;
-        const fall = setInterval(() => {
-          topPos += 5;
-          piece.style.top = topPos + "px";
-        }, 20);
-
-        setTimeout(() => {
-          clearInterval(fall);
-          piece.remove();
-        }, 2000);
-      }
-    }
-
-    function changeColor() {
-      const colors = [
-        "linear-gradient(to bottom, #ffd6e7, #fff0f7, #f6e9ff)",
-        "linear-gradient(to bottom, #e6ccff, #f6e9ff, #fff0fb)",
-        "linear-gradient(to bottom, #d4f1f9, #e6f7ff, #f3fbff)"
-      ];
-
-      const random = colors[Math.floor(Math.random() * colors.length)];
-      document.body.style.background = random;
-    }
-
-    let messages = JSON.parse(localStorage.getItem("chatMessages")) || [];
-
-    function renderMessages() {
-      const chatBox = document.getElementById("chatBox");
-      chatBox.innerHTML = "";
-
-      messages.forEach(msg => {
-        const div = document.createElement("div");
-        div.className = "chat-bubble";
-        div.innerHTML = "<strong>" + msg.name + ":</strong> " + msg.text;
-        chatBox.appendChild(div);
-      });
-    }
-
-    function sendMessage() {
-      const name = document.getElementById("chatName").value.trim() || "Anonymous";
-      const text = document.getElementById("chatMessage").value.trim();
-
-      if (!text) return;
-
-      messages.push({ name, text });
-      localStorage.setItem("chatMessages", JSON.stringify(messages));
-
-      document.getElementById("chatMessage").value = "";
-      renderMessages();
-    }
-
-    renderMessages();
 
     document.addEventListener("click", function(e) {
-      const heart = document.createElement("div");
-      heart.textContent = "💗";
-      heart.style.position = "fixed";
-      heart.style.left = e.clientX + "px";
-      heart.style.top = e.clientY + "px";
-      heart.style.fontSize = "20px";
-      heart.style.pointerEvents = "none";
-      heart.style.zIndex = "9999";
+      const flower = document.createElement("div");
+      flower.textContent = "🌸";
+      flower.style.position = "fixed";
+      flower.style.left = e.clientX + "px";
+      flower.style.top = e.clientY + "px";
+      flower.style.fontSize = "20px";
+      flower.style.pointerEvents = "none";
+      flower.style.zIndex = "9999";
 
-      document.body.appendChild(heart);
+      document.body.appendChild(flower);
 
       setTimeout(() => {
-        heart.remove();
+        flower.remove();
       }, 800);
     });
 
-    document.addEventListener("mousemove", function(e) {
-      if (Math.random() < 0.08) {
-        const tinyHeart = document.createElement("div");
-        tinyHeart.textContent = "💗";
-        tinyHeart.style.position = "fixed";
-        tinyHeart.style.left = e.clientX + "px";
-        tinyHeart.style.top = e.clientY + "px";
-        tinyHeart.style.fontSize = "14px";
-        tinyHeart.style.pointerEvents = "none";
-        tinyHeart.style.opacity = "0.8";
-        tinyHeart.style.zIndex = "9999";
-
-        document.body.appendChild(tinyHeart);
-
-        setTimeout(() => {
-          tinyHeart.remove();
-        }, 500);
-      }
-    });
-
     setInterval(() => {
-      const sticker = document.createElement("div");
-      sticker.textContent = "🌸";
-      sticker.style.position = "fixed";
-      sticker.style.left = Math.random() * window.innerWidth + "px";
-      sticker.style.top = "-20px";
-      sticker.style.fontSize = "18px";
-      sticker.style.pointerEvents = "none";
-      sticker.style.zIndex = "9998";
+      const petal = document.createElement("div");
+      petal.textContent = "🌼";
+      petal.style.position = "fixed";
+      petal.style.left = Math.random() * window.innerWidth + "px";
+      petal.style.top = "-20px";
+      petal.style.fontSize = "18px";
+      petal.style.pointerEvents = "none";
+      petal.style.zIndex = "9998";
 
-      document.body.appendChild(sticker);
+      document.body.appendChild(petal);
 
       let topPos = -20;
       const fall = setInterval(() => {
         topPos += 2;
-        sticker.style.top = topPos + "px";
+        petal.style.top = topPos + "px";
       }, 20);
 
       setTimeout(() => {
         clearInterval(fall);
-        sticker.remove();
+        petal.remove();
       }, 4000);
-    }, 1200);
+    }, 1400);
   </script>
 </body>
 </html>
