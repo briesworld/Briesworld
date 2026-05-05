@@ -371,6 +371,69 @@
         height: 220px;
       }
     }
+
+    /* quiz animations */
+.quiz-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.fade {
+  transition: all 0.4s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #ffe3f1;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff6fae, #ffc2e2);
+  transition: width 0.4s ease;
+}
+
+/* answer button animation */
+#answers button {
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* correct/wrong glow*/
+.correct {
+  background: #b8ffda !important;
+  color: #2e7d5b !important;
+}
+
+.wrong {
+  background: #ffd6e0 !important;
+  color: #a9446b !important;
+}
   </style>
 </head>
 <body>
@@ -388,6 +451,7 @@
       <a href="#message">Message</a>
       <a href="#fun">Fun</a>
       <a href="#chat">Chat</a>
+      <a href="#quiz">Quiz</a>
     </div>
   </nav>
 
@@ -578,6 +642,29 @@
       <div id="chatBox"></div>
     </div>
   </section>
+
+  <section class="section" id="quiz">
+  <h2 class="section-title">Mini Quiz 🎀</h2>
+
+  <div class="fun-wrap quiz-box">
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+
+    <p id="questionBox" class="fade"></p>
+
+    <div class="button-row" id="answers"></div>
+
+    <p id="quizResult" class="fade"></p>
+
+    <div class="button-row">
+      <button class="small-btn" onclick="nextQuestion()">Next 💖</button>
+      <button class="small-btn" onclick="restartQuiz()">Restart 🔄</button>
+    </div>
+
+    <p id="finalScore"></p>
+  </div>
+</section>
 
   <footer class="footer">
     <h3>Thanks for visiting my site! I hope I’ll see you soon!💗</h3>
@@ -786,6 +873,156 @@
         sticker.remove();
       }, 4000);
     }, 1200);
+
+    
+    const quiz = [
+  {
+    question: "What’s my favorite hobby? 🎨",
+    answers: ["Drawing", "Knitting", "Cooking"],
+    correct: "Drawing"
+  },
+  {
+    question: "Which drink do I love? 🥤",
+    answers: ["Mountain Dew", "Coffee", "MONSTER ENERGY DRINK"],
+    correct: "Mountain Dew"
+  },
+  {
+    question: "Favorite animal? 🐾",
+    answers: ["Otters", "Kangaroos", "Birds"],
+    correct: "Otters"
+  },
+  {
+    question: "What do I enjoy watching? 📺",
+    answers: ["Anime", "Drama", "News"],
+    correct: "Anime"
+  },
+  {
+    question: "What do I like doing digitally? 💻",
+    answers: ["Coding", "Hacking", "Typing essays"],
+    correct: "Coding"
+  },
+  {
+    question: "Favorite aesthetic? 🌸",
+    answers: ["Soft girl", "Dark grunge", "Minimal", "All of the Above"],
+    correct: "All of the above"
+  },
+  {
+    question: "Favorite food type? 🍜",
+    answers: ["Ramen/Noodles", "Meatloaf", "Steak"],
+    correct: "Ramen/Noodles"
+  },
+  {
+    question: "Favorite game? 🎮",
+    answers: ["Roblox", "Checkers", "Tetris"],
+    correct: "Roblox"
+  }
+];
+
+let currentQuestion = 0;
+let quizScore = 0;
+let answered = false;
+
+function loadQuestion() {
+  answered = false;
+
+  const q = quiz[currentQuestion];
+  const questionBox = document.getElementById("questionBox");
+
+  questionBox.classList.add("fade-out");
+
+  setTimeout(() => {
+    questionBox.textContent = q.question;
+    questionBox.classList.remove("fade-out");
+    questionBox.classList.add("fade-in");
+  }, 200);
+
+  const answersDiv = document.getElementById("answers");
+  answersDiv.innerHTML = "";
+
+  q.answers.forEach(answer => {
+    const btn = document.createElement("button");
+    btn.className = "small-btn";
+    btn.textContent = answer;
+
+    btn.onclick = () => checkAnswer(btn, answer);
+
+    answersDiv.appendChild(btn);
+  });
+
+  updateProgress();
+}
+
+function checkAnswer(button, answer) {
+  if (answered) return;
+  answered = true;
+
+  const correct = quiz[currentQuestion].correct;
+
+  const buttons = document.querySelectorAll("#answers button");
+
+  buttons.forEach(btn => {
+    if (btn.textContent === correct) {
+      btn.classList.add("correct");
+    } else {
+      btn.classList.add("wrong");
+    }
+    btn.disabled = true;
+  });
+
+  if (answer === correct) {
+    quizScore++;
+    document.getElementById("quizResult").textContent = "Correct! 💖✨";
+  } else {
+    document.getElementById("quizResult").textContent = "Oops! 💔";
+  }
+}
+
+function nextQuestion() {
+  if (!answered) return;
+
+  currentQuestion++;
+
+  if (currentQuestion < quiz.length) {
+    document.getElementById("quizResult").textContent = "";
+    loadQuestion();
+  } else {
+    showFinalScore();
+  }
+}
+
+function updateProgress() {
+  const progress = ((currentQuestion) / quiz.length) * 100;
+  document.getElementById("progressFill").style.width = progress + "%";
+}
+
+function showFinalScore() {
+  document.getElementById("questionBox").textContent = "Quiz Complete! 🎀";
+  document.getElementById("answers").innerHTML = "";
+  document.getElementById("quizResult").textContent = "";
+
+  let message = "";
+
+  if (quizScore === quiz.length) {
+    message = "Perfect score!! You know me SO well 💖✨";
+  } else if (quizScore > quiz.length / 2) {
+    message = "You did amazing!! 🌸";
+  } else {
+    message = "That was fun!! Try again 💕";
+  }
+
+  document.getElementById("finalScore").textContent =
+    quizScore + " / " + quiz.length + " — " + message;
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+  quizScore = 0;
+  document.getElementById("finalScore").textContent = "";
+  loadQuestion();
+}
+
+// start
+loadQuestion();
   </script>
 </body>
 </html>
